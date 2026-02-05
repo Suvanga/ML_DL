@@ -57,7 +57,7 @@ def train_step(model: torch.nn.Module,
           y_pred = model(X)
 
           #2 calculate the loss
-          loss = Loss_fn(y_pred, y)
+          loss = loss_fn(y_pred, y)
           train_loss += loss
           train_acc += accuracy_fn(y_true=y, y_pred=y_pred.argmax(dim=1))
 
