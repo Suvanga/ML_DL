@@ -99,3 +99,11 @@ def test_step(model:torch.nn.Module,
     test_loss /= len(data_loader)
     test_acc  /= len(data_loader)
     print(f"Test Loss : {test_loss} | Test accuracy: {test_acc}")
+
+from timeit import default_timer as timer
+def train_time(start:float,
+               end:float,
+               device: torch.device = None):
+  total_time = end-start
+  print(f"Total Time on {device} : {total_time:.3f} seconds")
+  return total_time
